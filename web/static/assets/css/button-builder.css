@@ -1,0 +1,49 @@
+/* input[type=file]::file-selector-button {
+    border: 2px solid #6d7cf0;
+    padding: .2em .4em;
+    border-radius: 3px;
+    background-color: #6d7cf0;
+    transition: 1s;
+    color: azure;
+    display: none;
+  }
+
+input[type=file]::file-selector-button:hover {
+    background-color: #8681ec;
+    border: 2px solid #8681ec;
+}
+
+input[type=file]::file-selector-button::after {
+    content: 'Выбрать';
+} */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+  }
+.btn-file input[type=file] {
+position: absolute;
+top: 0;
+right: 0;
+min-width: 100%;
+min-height: 100%;
+font-size: 100px;
+text-align: right;
+filter: alpha(opacity=0);
+opacity: 0;
+outline: none;
+background: white;
+cursor: inherit;
+display: block;
+}
+#id_captcha_1{
+  height: 44px;
+  width: 100px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  background-image: none;
+  border-radius: 8px;
+  background-color:rgb(243, 251, 255); 
+  border: 1px solid black;
+  }

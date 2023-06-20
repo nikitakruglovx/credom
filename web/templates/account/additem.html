@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="RU">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Credom - Обмен IT-Решениями</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' static %}">
+    <link href="{% static 'vendor/jqvmap/css/jqvmap.min.css' static %}" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'vendor/chartist/css/chartist.min.css' static %}">
+    <link href="{% static 'vendor/bootstrap-select/dist/css/bootstrap-select.min.css' static %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' static %}" rel="stylesheet">
+	<link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+
+</head>
+<body>
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <div id="main-wrapper">
+        <div class="nav-header">
+            <a href="{% url 'home' %}" class="brand-logo">
+                <img class="logo-abbr" src="{% static 'images/logo.png' static %}" alt="">
+                <img class="logo-compact" src="{% static 'images/logo-text.png' static %}" alt="">
+                <img class="brand-title" src="{% static 'images/logo-text.png' static %}" alt="">
+            </a>
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+		
+		<!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="search_bar dropdown show">
+                                <div class="dropdown-menu p-0 m-0 show">
+                                    <form>
+                                        <input class="form-control" type="search" placeholder="Поиск" aria-label="Search">
+                                    </form>
+                                </div>
+								<span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.7871 22.7761L17.9548 16.9437C19.5193 15.145 20.4665 12.7982 20.4665 10.2333C20.4665 4.58714 15.8741 0 10.2333 0C4.58714 0 0 4.59246 0 10.2333C0 15.8741 4.59246 20.4665 10.2333 20.4665C12.7982 20.4665 15.145 19.5193 16.9437 17.9548L22.7761 23.7871C22.9144 23.9255 23.1007 24 23.2816 24C23.4625 24 23.6488 23.9308 23.7871 23.7871C24.0639 23.5104 24.0639 23.0528 23.7871 22.7761ZM1.43149 10.2333C1.43149 5.38004 5.38004 1.43681 10.2279 1.43681C15.0812 1.43681 19.0244 5.38537 19.0244 10.2333C19.0244 15.0812 15.0812 19.035 10.2279 19.035C5.38004 19.035 1.43149 15.0865 1.43149 10.2333Z" fill="#A4A4A4"/></svg>
+                                </span>
+                            </div>
+                        </div>
+                        <ul class="navbar-nav header-right">
+							<li class="nav-item dropdown">
+								<a class="nav-link" href="#" role="button" data-toggle="dropdown">
+									<span style="margin-right: 20px;">{{ user }}</span><img class='avatar2' src="http://127.0.0.1:8000/media/{{ user.avatar_profile }}" width="50px"/>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right">
+									<a href="{% url 'profile' %}" class="dropdown-item ai-icon">
+										<svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+										<span class="ml-2">Профиль </span>
+									</a>
+									<a href="{% url 'logout' %}" class="dropdown-item ai-icon">
+										<svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+										<span class="ml-2">Выйти </span>
+									</a>
+								</div>
+							</li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="deznav">
+            <div class="deznav-scroll">
+				<ul class="metismenu" id="menu">
+                    <li><a class="ai-icon" href="{% url 'home' %}" aria-expanded="false">
+							<i class="flaticon-381-windows"></i>
+							<span class="nav-text">Главная</span>
+						</a>
+                    </li>
+					<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-layer-1"></i>
+							<span class="nav-text">Маркетплейс</span>
+					    </a>
+						<ul aria-expanded="false">
+							<li><a href="{% url 'additem' %}">Выставить</a></li>
+							<li><a href="{% url 'home' %}">Приобрести</a></li>
+						</ul>
+					</li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-list"></i>
+							<span class="nav-text">Категории</span>
+						</a>
+						<ul aria-expanded="false">
+							<li><a href="{% url 'sitesandweb' %}">Сайты/Веб-приложения</a></li>
+							<li><a href="{% url 'scripts' %}">Скрипты</a></li>
+							<li><a href="{% url 'bots' %}">Онлайн боты</a></li>
+							<li><a href="{% url 'mobile' %}">Мобильные приложения для Android</a></li>
+                            <li><a href="{% url 'software' %}">Десктоп софт</a></li>
+                            <li><a href="{% url 'templates' %}">html/css/js Frontend Шаблоны</a></li>
+                            <li><a href="{% url 'logotype' %}">Логотипы</a></li>
+                            <li><a href="{% url 'treedmodels' %}">3D модели</a></li>
+                            <li><a href="{% url 'books' %}">Электронные книги</a></li>
+                            <li><a href="{% url 'courses' %}">Обучающие курсы</a></li>
+						</ul>
+                    </li>
+                    <li><a class="ai-icon" href="{% url 'cloud' %}" aria-expanded="false">
+							<i class="flaticon-381-cloud"></i>
+							<span class="nav-text">Облако</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-notepad"></i>
+							<span class="nav-text">Ресурсы</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="{% url 'about' %}">О нас</a></li>
+                            <li><a href="{% url 'help' %}">Помощь</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'news' %}" class="ai-icon" aria-expanded="false">
+							<i class="flaticon-381-news"></i>
+							<span class="nav-text">Новости</span>
+						</a>
+					</li>
+                </ul>
+            
+				<!-- <div class="add-menu-sidebar">
+					<img src="{% static 'images/ethereum.png' static %}" alt=""/>
+					<p>Опачивайте товары в криптовалюте ETH</p>
+				</div> -->
+			</div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+		
+		<!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <!-- row -->
+			<div class="container-fluid">
+				<div class="form-head d-flex mb-3 align-items-start">
+					<div class="mr-auto d-none d-lg-block">
+						<h2 class="text-black font-w600 mb-0">Разместить продукт</h2>
+					</div>
+				</div><br><br>
+                {% for msg in messages %}
+                <div class="alert alert-danger" role="alert">
+                {{ msg }}
+                </div><br>
+                {% endfor %}
+                <!-- {% if total %}
+                    <div class="alert alert-warning" role="alert">
+                        К сожалению на вашем счету не хватает средств для добавление товара
+                        <span>пополните баланс на {{ total_upload }} ETH</span>
+                    </div><br>
+                {% endif %} -->
+                <div class="row">
+                    <div class="col-xl-6 col-xxl-6 col-lg-12 col-lg-9 col-md-12">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Добавление товара</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="basic-form">
+                                            <form method="POST" enctype="multipart/form-data">
+                                                {% csrf_token %}
+                                                <span>Выберите 1 картинку для товара</span>
+                                                <span style="color:darkviolet">Это поле объязательное</span>
+                                                <div class="custom-file">
+                                                    {{ form.photo_item }}<br>
+                                                    <label class="custom-file-label"></label><br>
+                                                </div>
+                                                <span>Выберите 2 картинку для товара</span>
+                                                <div class="custom-file">
+                                                    {{ form.two_photo_item }}<br>
+                                                    <label class="custom-file-label"></label><br>
+                                                </div>
+                                                <span>Выберите 3 картинку для товара</span>
+                                                <div class="custom-file">
+                                                    {{ form.tree_photo_item }}<br>
+                                                    <label class="custom-file-label"></label><br>
+                                                </div>
+                                                <span>Выберите 4 картинку для товара</span>
+                                                <div class="custom-file">
+                                                    {{ form.four_photo_item }}<br>
+                                                    <label class="custom-file-label"></label><br>
+                                                </div>
+                                                <span>Имя товара</span>
+                                                <span style="color:darkviolet">Это поле объязательное</span>
+                                                <div class="form-group">
+                                                    {{ form.name_item }}
+                                                </div>
+                                                <span>Задайте описание вашему товару</span>
+                                                <span style="color:darkviolet">Это поле объязательное</span>
+                                                <div class="form-group">
+                                                    {{ form.text_item }}
+                                                </div>
+                                                <span>Загрузите товар архивом</span>
+                                                <span style="color:darkviolet">Одно из этих полей объязательное</span>
+                                                <div class="custom-file">
+                                                    {{ form.archive_file }}
+                                                    <label class="custom-file-label"></label><br><br>
+                                                </div>
+                                                <span>ИЛИ Добавьте ссылку на товар</span>
+                                                <div class="form-group">
+                                                    {{ form.file_link }}
+                                                </div>
+                                                <span>Укажите цену в ETH за 1 еденицу</span>
+                                                <div class="form-group">
+                                                    {{ form.price_item }}
+                                                </div>
+                                                <span>Выберите раздел публикации</span>
+                                                <div class="form-group">
+                                                    {{ form.choice_group }}<br>
+                                                </div>
+                                                <div>
+                                                    <button type="submit" class="btn btn-primary">Добавить</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-xxl-6 col-lg-12  col-lg-9 col-md-12">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-header border-0 pb-0 d-sm-flex d-block">
+                                        <div>
+                                            <h4 class="card-title mb-1">Аккаунт {{ user }}</h4>
+                                            <small class="mb-0">{{ user.uu_id }}</small><br><br>
+                                            <h4>Ваш ETH адрес: </h4>
+                                            <small>{{ user.wallet_address }}</small><br><br>
+                                            <h4>Баланс: {{ balance }} </h4>
+                                            <img class="qrcode" src="media/qrcode/{{ user.username }}.png" width="60%" height="60%">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+		
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+		<!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="{% static 'vendor/global/global.min.js' static %}"></script>
+	<script src="{% static 'vendor/bootstrap-select/dist/js/bootstrap-select.min.js' static %}"></script>
+	<script src="{% static 'vendor/chart.js/Chart.bundle.min.js' static %}"></script>
+    <script src="{% static 'js/custom.min.js' static %}"></script>
+	<script src="{% static 'js/deznav-init.js' static %}"></script>
+	
+	<!-- Counter Up -->
+    <script src="{% static 'vendor/waypoints/jquery.waypoints.min.js' static %}"></script>
+    <script src="{% static 'vendor/jquery.counterup/jquery.counterup.min.js' static %}"></script>
+		
+	<!-- Apex Chart -->
+	<script src="{% static 'vendor/apexchart/apexchart.js' static %}"></script>
+	
+	<!-- Chart piety plugin files -->
+	<script src="{% static static 'vendor/peity/jquery.peity.min.js' static %}"></script>
+	
+	<!-- Dashboard 1 -->
+	<script src="{% static 'js/dashboard/dashboard-1.js' static %}"></script> 
+	
+	
+</body>
+</html>

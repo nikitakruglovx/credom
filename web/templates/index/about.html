@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Credom | Blockchain Digital Маркетплейс</title>
+	<link rel="icon" href="{% static 'land/img/favicon.png' static %}" type="image/png">
+
+  <link rel="stylesheet" href="{% static 'land/vendors/bootstrap/bootstrap.min.css' static %}">
+  <link rel="stylesheet" href="{% static 'land/vendors/fontawesome/css/all.min.css' static %}">
+  <link rel="stylesheet" href="{% static 'land/vendors/themify-icons/themify-icons.css' static %}">
+  <link rel="stylesheet" href="{% static 'land/vendors/linericon/style.css' static %}">
+  <link rel="stylesheet" href="{% static 'land/vendors/owl-carousel/owl.theme.default.min.css' static %}">
+  <link rel="stylesheet" href="{% static 'land/vendors/owl-carousel/owl.carousel.min.css' static %}">
+  <link rel="stylesheet" href="{% static 'land/vendors/flat-icon/font/flaticon.css' static %}">
+  <link rel="stylesheet" href="{% static 'land/vendors/nice-select/nice-select.css' static %}">
+
+  <link rel="stylesheet" href="{% static 'land/css/style.css' static %}">
+</head>
+<body class="bg-shape">
+
+  <!--================ Header Menu Area start =================-->
+  <header class="header_area">
+    <div class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container box_1620">
+          <a class="navbar-brand logo_h" href="{% url 'index' %}">
+            <img style='width: 50px; height: 50px;' src="{% static 'land/img/logo.png' static %}" alt="">
+            <img style='width: 120px; height: 30px;' class="logo-compact" src="{% static 'images/logo-text.png' static %}" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav justify-content-end">
+              <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Дом</a></li> 
+              <li class="nav-item active"><a class="nav-link" href="about.html">О проекте</a></li> 
+
+              <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">Что то ещё</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item"><a class="nav-link" href="blog.html">GitHub</a></li>
+                  <li class="nav-item"><a class="nav-link" href="blog-details.html">Контакты</a></li>
+                </ul>
+							</li>
+            </ul>
+
+            <div class="nav-right text-center text-lg-right py-4 py-lg-0">
+              <a class="button" href="{% url 'home' %}">Войти</a>
+            </div>
+          </div> 
+        </div>
+      </nav>
+    </div>
+  </header><br><br>
+  <!--================Header Menu Area =================-->
+
+
+  <!--================Hero Banner Area Start =================-->
+<div class="content-body">
+  <div class="container-fluid">
+    <div class="form-head d-flex mb-3 align-items-start">
+      <div class="mr-auto d-none d-lg-block">
+        <h2 class="text-black font-w600 mb-0"></h2>
+      </div>
+    </div><br><br>
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-body">
+            <center>
+                <br><br>
+                <h2>Добро пожаловать в свободный креативный IT дом CREDOM</h2>
+            </center><br><br>
+            <center>
+                <hr>
+                <img src="{% static 'images/decentralization.png' static %}" style="width: 80px; height: 80px;"><br><br>
+                <h3>Credom - это децентрализированая платформа где:</h3>
+                  <li>
+                    🌱 -Можете продавать свои товары за криптовалюту
+                  </li>
+                  <li>
+                    🗳 -Преобретать товары за криптовалюту
+                  </li>
+                  <li>
+                    📈 -Развивать себя и свои идеи
+                  </li>
+                  <li>
+                    ♻️ -Обмениваться ресурсами
+                  </li>
+                  <li>
+                    🔒 -Безопасно хранить данные
+                  </li>
+            </center><br><br>
+            <center>
+                <hr>
+                <img src="{% static 'images/security.png' static %}" style="width: 80px; height: 80px;"><br><br>
+                <h3>Не зависеть. Безопасно. Приватно.</h3>
+                <li>
+                    📦 -Мы не храним приватные данные
+                </li>
+                <li>
+                    👁 -Не следим за пользователями
+                </li>
+                <li>
+                    🚸 -Мы не регулируем аккауанты,объекты или средства
+                </li>
+            </center><br><br>
+            <center>
+                <hr>
+                <img src="{% static 'images/bulb.png' static %}" style="width: 90px; height: 90px;"><br><br>
+                <h3>Общее.</h3>
+                <li>
+                  Цель проекта: <span>Сделать IT индустрию</span> - развитой, и позволить специалистам из разных сфер: <h5>Создавать, Реализовываться, Делиться, Обмениваться, Зарабатывать.</h5>
+                </li>
+            </center>
+        </div>
+    </div>
+  </div>
+</div><br>
+  <!--================Search Package section End =================-->
+
+
+  <!--================Blog section Start =================-->
+  
+  <!--================Blog section End =================-->
+
+
+  <!-- ================ start footer Area ================= -->
+  <footer class="footer-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3  col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <h6>About Agency</h6>
+            <p>
+              The world has become so fast paced that people don’t want to stand by reading a page of information to be  they would much rather look at a presentation and understand
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <h6>Navigation Links</h6>
+            <div class="row">
+              <div class="col">
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Feature</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Portfolio</a></li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul>
+                  <li><a href="#">Team</a></li>
+                  <li><a href="#">Pricing</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </div>										
+            </div>							
+          </div>
+        </div>							
+        <div class="col-lg-3  col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <h6>Newsletter</h6>
+            <p>
+              For business professionals caught between high OEM price and mediocre print and graphic output.									
+            </p>								
+            <div id="mc_embed_signup">
+              <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscription relative">
+                <div class="input-group d-flex flex-row">
+                  <input name="EMAIL" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
+                  <button class="btn bb-btn"><span class="lnr lnr-location"></span></button>		
+                </div>									
+                <div class="mt-10 info"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3  col-md-6 col-sm-6">
+          <div class="single-footer-widget mail-chimp">
+            <h6 class="mb-20">InstaFeed</h6>
+            <ul class="instafeed d-flex flex-wrap">
+              <li><img src="img/instagram/i1.jpg" alt=""></li>
+              <li><img src="img/instagram/i2.jpg" alt=""></li>
+              <li><img src="img/instagram/i3.jpg" alt=""></li>
+              <li><img src="img/instagram/i4.jpg" alt=""></li>
+              <li><img src="img/instagram/i5.jpg" alt=""></li>
+              <li><img src="img/instagram/i6.jpg" alt=""></li>
+              <li><img src="img/instagram/i7.jpg" alt=""></li>
+              <li><img src="img/instagram/i8.jpg" alt=""></li>
+            </ul>
+          </div>
+        </div>						
+      </div>
+
+      <div class="footer-bottom">
+        <div class="row align-items-center">
+          <p class="col-lg-8 col-sm-12 footer-text m-0 text-center text-lg-left"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This project is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="{% url 'index' %}" target="_blank">Credom</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          <div class="col-lg-4 col-sm-12 footer-social text-center text-lg-right">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-dribbble"></i></a>
+            <a href="#"><i class="fab fa-behance"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ================ End footer Area ================= -->
+
+
+
+
+  <script src="{% static 'land/vendors/jquery/jquery-3.2.1.min.js' static %}"></script>
+  <script src="{% static 'land/vendors/bootstrap/bootstrap.bundle.min.js' static %}"></script>
+  <script src="{% static 'land/vendors/owl-carousel/owl.carousel.min.js' static %}"></script>
+  <script src="{% static 'land/vendors/nice-select/jquery.nice-select.min.js' static %}"></script>
+  <script src="{% static 'land/js/jquery.ajaxchimp.min.js' static %}"></script>
+  <script src="{% static 'land/js/mail-script.js' static %}"></script>
+  <script src="{% static 'land/js/skrollr.min.js' static %}"></script>
+  <script src="{% static 'land/js/main.js' static %}"></script>
+</body>
+</html>
